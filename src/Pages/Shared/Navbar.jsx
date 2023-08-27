@@ -26,7 +26,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 sticky top-0 shadow-md">
             <Link to="/" className='navbar-start lg:hidden'>
 {logoContainer}
             </Link>
