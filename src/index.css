@@ -30,3 +30,10 @@
   @apply w-full lg:w-96 bg-secondary bg-opacity-30 px-7 py-5 border-l-2 rounded-r-full outline-none placeholder:text-white
 
 }
+
+.options{
+  @apply flex items-center gap-4 border py-3 px-3 rounded hover:border-secondary cursor-pointer transition-all duration-200 mb-7
+}
+.optionActive{
+  @apply flex items-center gap-4 border border-accent py-3 px-3 rounded hover:border-secondary cursor-pointer transition-all duration-200 mb-7
+}

@@ -25,7 +25,7 @@ const to = form.to.value;
             distance:res.data.distance
         }
         localStorage.setItem("preferences",JSON.stringify(preferences))
-        navigate("/restPage")
+        navigate("/restPage/secondStep")
         }
 })
 .catch(error=>{
@@ -48,8 +48,10 @@ const to = form.to.value;
 <form onSubmit={handleSubmit} className='flex items-center justify-center'>
     <div className='relative'>
     <input type="text" className='inputField' 
+    disabled = {true}
     name='from'
-    placeholder='From'/>
+    value="Dhaka"
+    placeholder='Dhaka'/>
     <IoLocationSharp className='text-secondary w-6 h-5 absolute top-[33%] left-2' />
     </div>
     <div className='relative'>
