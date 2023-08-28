@@ -24,9 +24,9 @@
 }
 
 .inputField{
-  @apply w-full lg:w-96 bg-secondary bg-opacity-30 px-7 py-5 rounded-l-full outline-none 
+  @apply w-full lg:w-96 bg-secondary bg-opacity-30 px-7 py-5 rounded-l-full outline-none placeholder:text-white
 }
 .inputField2{
-  @apply w-full lg:w-96 bg-secondary bg-opacity-30 px-7 py-5 border-l-2 rounded-r-full outline-none 
+  @apply w-full lg:w-96 bg-secondary bg-opacity-30 px-7 py-5 border-l-2 rounded-r-full outline-none placeholder:text-white
 
 }
