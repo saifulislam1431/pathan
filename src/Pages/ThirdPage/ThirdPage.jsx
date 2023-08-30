@@ -11,7 +11,7 @@ const token = import.meta.env.VITE_IMAGE_TOKEN
 const ThirdPage = () => {
     const navigate = useNavigate()
     const [url, setUrl] = useState("");
-console.log(url);
+    console.log(url);
     const oldPreferences = localStorage.getItem("preferences");
     const preferences = JSON.parse(oldPreferences);
     // console.log(preferences);
@@ -44,29 +44,29 @@ console.log(url);
                 if (data) {
                     setUrl(data.data.display_url)
                     axios.get(`http://localhost:5000/calculate-total-price?distance=${preferences.distance}&&weight=${weight}&&quantity=${quantity}`)
-            .then(res => {
-                console.log(res);
-                if (res.data.totalPrice) {
-                    const newPreferences = {
-                        from: preferences.from,
-                        to: preferences.to,
-                        distance: preferences.distance,
-                        pick: preferences.pick,
-                        weight,
-                        quantity,
-                        url:data.data.display_url,
-                        shippingCharge: res.data.totalPrice,
-                        type
-                    }
-                    localStorage.setItem("preferences", JSON.stringify(newPreferences))
-                    navigate("/restPage/forthStep")
-                }
-                console.log(url);
-            })
+                        .then(res => {
+                            console.log(res);
+                            if (res.data.totalPrice) {
+                                const newPreferences = {
+                                    from: preferences.from,
+                                    to: preferences.to,
+                                    distance: preferences.distance,
+                                    pick: preferences.pick,
+                                    weight,
+                                    quantity,
+                                    url: data.data.display_url,
+                                    shippingCharge: res.data.totalPrice,
+                                    type
+                                }
+                                localStorage.setItem("preferences", JSON.stringify(newPreferences))
+                                navigate("/restPage/forthStep")
+                            }
+                            console.log(url);
+                        })
                 }
             })
 
-        
+
         // .catch(error=>{
         //     // Swal.fire({
         //     //     title: 'Error!',

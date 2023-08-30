@@ -12,6 +12,8 @@ import SeventhPage from "../Pages/SeventhPage/SeventhPage";
 import EighthPage from "../Pages/EighthPage/EighthPage";
 import NinthPage from "../Pages/NinethPage/NinthPage";
 import FinalPage from "../Pages/FinalPage/FinalPage";
+import SignUp from "../Pages/SignUp/SignUp";
+import SignIn from "../Pages/SignIn/SignIn";
 
 const route = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ const route = createBrowserRouter([
             {
                 path:"/",
                 element:<Home />
+            },
+            {
+                path:"/signUp",
+                element:<SignUp />
+            },
+            {
+                path:"/signIn",
+                element:<SignIn/>
             }
         ]
     },
