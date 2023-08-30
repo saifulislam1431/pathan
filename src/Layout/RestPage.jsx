@@ -39,7 +39,7 @@ const RestPage = () => {
 <ul className="steps steps-vertical">
   <li data-content="From" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.from}</span></li>
 
-  <li data-content="Pick" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{`${preferences.pick === "" ? "Pick" : preferences.pick}`} <br /> {preferences.selectedDate}</span></li>
+  <li data-content="Pick" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{`${preferences.pick === "" ? "Pick" : preferences.pick}`} <br /> {preferences.selectedDate} <br /> at {preferences.pickFloors}</span></li>
 
 
   <li data-content="W/Q" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.weight}Kg * {preferences.quantity} Pice</span></li>
