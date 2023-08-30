@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import TitleTag from '../../Components/TitleTag';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { HiArrowSmallRight } from 'react-icons/hi2';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
@@ -15,6 +15,7 @@ const EighthPage = () => {
     const [IsShow, setIsShow] = useState(false);
     const [url, setUrl] = useState("");
     const [error, setError] = useState("");
+    const location = useLocation()
 
 
     const hosting_url = `https://api.imgbb.com/1/upload?key=${token}`
@@ -108,7 +109,7 @@ const EighthPage = () => {
         <section>
             <TitleTag num="8" name="Contact"></TitleTag>
             <h1 className='text-3xl font-extrabold text-slate-700 mt-3 mb-8'>Fill in your contact details</h1>
-            <p>How can we contact you? With these contact details we will keep you up to date on your transport. Enter your details here. Do you already have an account? Then you can go here <Link to="/signIn" className='underline decoration-wavy font-semibold text-secondary'>Sign In.</Link> If don't have any account then simply fill all the box to create an account and continue rest process.</p>
+            <p>How can we contact you? With these contact details we will keep you up to date on your transport. Enter your details here. Do you already have an account? Then you can go here <Link to="/signIn" className='underline decoration-wavy font-semibold text-secondary' state={{from : location}} replace>Sign In.</Link> If don't have any account then simply fill all the box to create an account and continue rest process.</p>
 
             <div className='my-10 border-t-2 border-b-2 py-5 border-dashed border-secondary'>
                 <form onSubmit={handleForm}>

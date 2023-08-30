@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from "../../assets/express-delivery.png"
 import heroImg from "../../assets/signin-01.png";
 import SocialLogin from '../../Components/SocialLogin';
@@ -8,7 +8,10 @@ import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const SignIn = () => {
+    const location = useLocation();
+    console.log(location);
     const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/"
     const { user, signIn } = useAuth();
     const [type, setType] = useState("password");
     const [IsShow, setIsShow] = useState(false);
@@ -31,7 +34,7 @@ const SignIn = () => {
         signIn(email,password)
             .then(res => {
                 const loggedUser = res.user;
-                navigate("/")
+                navigate(from, { replace: true })
                 Swal.fire({
                     title: 'Success!',
                     text: 'Sign In Successful',

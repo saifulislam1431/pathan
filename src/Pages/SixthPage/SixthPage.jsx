@@ -3,23 +3,26 @@ import { HiArrowSmallRight, HiOutlineBuildingOffice, HiOutlineCurrencyBangladesh
 import { IoSwapVerticalOutline } from 'react-icons/io5';
 import TitleTag from '../../Components/TitleTag';
 import { useNavigate } from 'react-router-dom';
+import useFloor from '../../hooks/useFloor';
 
 const SixthPage = () => {
+    const [allFloors] = useFloor();
     const navigate = useNavigate()
     const oldPreferences = localStorage.getItem("preferences");
     const preferences = JSON.parse(oldPreferences);
     const oldAdd = parseFloat(preferences.additionalTaka);
 
-    const [allFloor, setAllFloor] = useState([]);
+    // const [allFloor, setAllFloor] = useState([]);
+
     const [deliveryFloors, setFloor] = useState("");
     const [additionalTaka , setAdditionalTaka] = useState(0);
 
 
-    useEffect(() => {
-        fetch("../../../public/floor.json")
-            .then(res => res.json())
-            .then(data => setAllFloor(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch("../../../public/floor.json")
+    //         .then(res => res.json())
+    //         .then(data => setAllFloor(data))
+    // }, [])
 
     const handleFloor = (no, taka) => {
         setFloor(no)
@@ -55,7 +58,7 @@ const SixthPage = () => {
 
 
             <div className='date-container mt-5'>
-                {allFloor.map((floor, index) => (
+                {allFloors.map((floor, index) => (
                     <div className={` ${deliveryFloors === floor.name ? "optionActive flex justify-between items-center" : "my-3 border py-3 px-3 flex justify-between rounded cursor-pointer hover:border-primary"}`} key={index} onClick={() => handleFloor(floor.name, floor.charge)}>
 
                         <div className='inline-flex items-center gap-2'>
