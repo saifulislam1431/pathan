@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "name":"Jane Doe",
+        "testimonial" : "Pathan's courier service made the process of sending packages incredibly easy. The platform's user-friendly interface allowed me to send parcels to my preferred destinations with specific instructions. The communication with the courier team was seamless, and my packages were delivered on time. Highly recommended!",
+        "rating":4.6
+    },
+    {
+        "id" : 2,
+        "name":"John Smith",
+        "testimonial" : "I had a fantastic experience using Pathan's courier service. The platform provided a wide range of shipping options, and the advanced tracking system helped me monitor my shipments. The ability to schedule pickups and deliveries directly through the platform saved me a lot of time and effort. Thanks to Pathan, my packages were handled with care and delivered promptly.",
+        "rating":4
+    },
+    {
+        "id" : 3,
+        "name":"Sarah Johnson",
+        "testimonial" : "Pathan's courier service exceeded my expectations. The competitive pricing and reliable delivery options made it the best choice for sending parcels. The platform's user-friendly design and helpful FAQ section guided me throughout the process. Pathan made my shipping experience smooth and stress-free!",
+        "rating":5
+    }
+]

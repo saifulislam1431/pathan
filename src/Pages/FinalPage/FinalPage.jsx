@@ -80,7 +80,9 @@ const FinalPage = ({price}) => {
                 deliveryTime: preferences.deliveryTime,
                 deliveryFloors: preferences.deliveryFloors,
                 pickFloors: preferences.pickFloors,
-                additionalTaka:preferences.pickFloors
+                additionalTaka:preferences.pickFloors,
+                email: user.email,
+                name: user.displayName
             }
     
 
