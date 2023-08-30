@@ -72,10 +72,6 @@ const route = createBrowserRouter([
                 path:"nineStep",
                 element:<NinthPage />
             },
-            {
-                path:"finalStep",
-                element:<FinalPage />
-            },
         ]
     }
 ])
