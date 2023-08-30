@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import logo from "../../assets/express-delivery.png"
 import { IoIosLogIn } from "react-icons/io";
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "lightThem")
+
+  const [subMenu, setSubMenu] = useState(false)
+
+  const handleToggle = e => {
+      if (e.target.checked) {
+          setTheme("night")
+      } else {
+          setTheme("lightThem")
+      }
+  }
+  const {user,logOut} = useAuth();
+  const handleOut =()=>{
+    logOut()
+    .then(()=>{
+        Swal.fire({
+            title: 'Success!',
+            text: 'Sign Out',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+          
+    })
+    .catch(error=>{
+        Swal.fire({
+            title: 'Error!',
+            text: error.message,
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
+    })
+}
 
     const navItems = <>
     <li><NavLink to="/" className={({isActive}) => (isActive ? "navActive" : "navDefault")}>Home</NavLink></li>
@@ -14,9 +48,29 @@ const Navbar = () => {
     <li><NavLink to="/about" className={({isActive}) => (isActive ? "navActive" : "navDefault")}>About Us</NavLink></li>
 
 
-        <Link to="/signIn">
-            <button className='myBtn'>Sign In <IoIosLogIn className='w-6 h-6'/></button>
-        </Link>
+        {
+          user ? 
+          <div className="dropdown dropdown-end"  onClick={()=>setSubMenu(!subMenu)}>
+      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img src={user.photoURL} />
+        </div>
+      </label>
+      {
+        subMenu ? <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 ">
+        <li className='my-3 border border-primary py-2 px-2 rounded font-medium hover:bg-primary hover:text-white transition-all duration-200 cursor-pointer'>
+          
+            Profile
+          
+        </li>
+        <li className='my-3 border border-primary py-2 px-2 rounded font-medium hover:bg-primary hover:text-white transition-all duration-200 cursor-pointer' onClick={handleOut}>Logout</li>
+      </ul>: ""
+      }
+    </div>
+          :<Link to="/signIn">
+          <button className='myBtn'>Sign In <IoIosLogIn className='w-6 h-6'/></button>
+      </Link>
+        }
 
     </>
     const logoContainer = <div className='flex flex-col items-center relative'>

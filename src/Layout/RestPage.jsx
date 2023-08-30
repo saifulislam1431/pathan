@@ -39,27 +39,27 @@ const RestPage = () => {
 <ul className="steps steps-vertical">
   <li data-content="From" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.from}</span></li>
 
-  <li data-content="Pick" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{`${preferences.pick === "" ? "Pick" : preferences.pick}`} <br /> {preferences.selectedDate} <br /> at {preferences.pickFloors}</span></li>
+  <li data-content="Pick" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{`${preferences.pick === "" ? "Pick" : preferences.pick}`} <br /> {preferences.selectedDate ? preferences.selectedDate : "Date"} <br /> at {preferences.pickFloors ? preferences.pickFloors : "Floor"}</span></li>
 
 
-  <li data-content="W/Q" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.weight}Kg * {preferences.quantity} Pice</span></li>
+  <li data-content="W/Q" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.weight ? preferences.weight : 0}Kg * {preferences.quantity ? preferences.quantity : 0} Pice</span></li>
 
 
-  <li data-content="Type" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.type}</span></li>
+  <li data-content="Type" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.type ? preferences.type : "None"}</span></li>
 
 
-  <li data-content="To" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.to} <br /> {preferences.selectedDate} <br /> {preferences.deliveryTime} <br /> at {preferences.deliveryFloors}</span></li>
+  <li data-content="To" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.to} <br /> {preferences.selectedDate ? preferences.selectedDate : "Date"} <br /> {preferences.deliveryTime ? preferences.deliveryTime : "Time"} <br /> at {preferences.deliveryFloors ? preferences.deliveryFloors : "Floor"}</span></li>
 </ul>
 </div>
 
 <div className="divider"></div>
 <div className='flex flex-col items-end justify-end w-full'>
-<p className='font-semibold inline-flex items-center gap-1 text-error'>Shipping Charge: <HiOutlineCurrencyBangladeshi className='w-5 h-5'/> {preferences.shippingCharge}</p>
+<p className='font-semibold inline-flex items-center gap-1 text-error'>Shipping Charge: <HiOutlineCurrencyBangladeshi className='w-5 h-5'/> {preferences.shippingCharge ? preferences.shippingCharge : "00"}</p>
 <p className='font-semibold inline-flex items-center gap-1 text-error'>Additional Charge: + {preferences.additionalTaka ? preferences.additionalTaka : 0}</p>
 
 <div className="divider"></div>
 
-<p className='font-semibold inline-flex items-center gap-1 text-secondary'>Total Charge: <HiOutlineCurrencyBangladeshi className='w-5 h-5'/> {parseFloat(preferences.shippingCharge) + parseFloat(preferences.additionalTaka)}</p>
+<p className='font-semibold inline-flex items-center gap-1 text-secondary'>Total Charge: <HiOutlineCurrencyBangladeshi className='w-5 h-5'/> {preferences.shippingCharge ? parseFloat(preferences.shippingCharge) + parseFloat(preferences.additionalTaka) : "00"}</p>
 </div>
 
     </ul>
