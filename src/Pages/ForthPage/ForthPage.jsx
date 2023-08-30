@@ -82,7 +82,6 @@ const ForthPage = () => {
 
                     </div>
                 ))}
-                <p>Selected Date: {selectedDate ? selectedDate : 'None'}</p>
             </div>
 
             <div className='flex items-end justify-end mt-11' onClick={handlePagination}>

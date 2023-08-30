@@ -39,7 +39,7 @@ const RestPage = () => {
 <ul className="steps steps-vertical">
   <li data-content="From" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.from}</span></li>
 
-  <li data-content="Pick" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{`${preferences.pick === "" ? "Pick" : preferences.pick}`} on {preferences.selectedDate}</span></li>
+  <li data-content="Pick" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{`${preferences.pick === "" ? "Pick" : preferences.pick}`} <br /> {preferences.selectedDate}</span></li>
 
 
   <li data-content="W/Q" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.weight}Kg * {preferences.quantity} Pice</span></li>
@@ -48,7 +48,7 @@ const RestPage = () => {
   <li data-content="Type" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.type}</span></li>
 
 
-  <li data-content="To" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.to}</span></li>
+  <li data-content="To" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.to} <br /> {preferences.selectedDate} <br /> {preferences.deliveryTime}</span></li>
 </ul>
 </div>
 
