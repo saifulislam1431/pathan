@@ -48,7 +48,7 @@ const RestPage = () => {
   <li data-content="Type" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.type}</span></li>
 
 
-  <li data-content="To" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.to} <br /> {preferences.selectedDate} <br /> {preferences.deliveryTime}</span></li>
+  <li data-content="To" className="step step-primary font-semibold"><span className='text-secondary text-base hover:bg-transparent hover:text-secondary'>{preferences.to} <br /> {preferences.selectedDate} <br /> {preferences.deliveryTime} <br /> at {preferences.deliveryFloors}</span></li>
 </ul>
 </div>
 

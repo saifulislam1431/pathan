@@ -1,0 +1,80 @@
+[
+    {
+        "id" : 0,
+        "name": "Ground floor",
+        "description": "Have the items ready",
+        "charge": 0
+    },
+    {
+        "id" : 11,
+        "name": "Elevator available",
+        "description": "Regardless which floor",
+        "charge": 0
+    },
+    {
+        "id" : -1,
+        "name": "Basement",
+        "description": "Have the items ready",
+        "charge": 10
+    },
+    {
+        "id" : 1,
+        "name": "1st floor",
+        "description": "Without elevator",
+        "charge": 10
+    },
+    {
+        "id" : 2,
+        "name": "2nd floor",
+        "description": "Without elevator",
+        "charge": 20
+    },
+    {
+        "id" : 3,
+        "name": "3rd floor",
+        "description": "Without elevator",
+        "charge": 30
+    },
+    {
+        "id" : 4,
+        "name": "4th floor",
+        "description": "Without elevator",
+        "charge": 40
+    },
+    {
+        "id" : 5,
+        "name": "5th floor",
+        "description": "Without elevator",
+        "charge": 50
+    },
+    {
+        "id" : 6,
+        "name": "6th floor",
+        "description": "Without elevator",
+        "charge": 60
+    },
+    {
+        "id" : 7,
+        "name": "7th floor",
+        "description": "Without elevator",
+        "charge": 70
+    },
+    {
+        "id" :8,
+        "name": "8th floor",
+        "description": "Without elevator",
+        "charge": 80
+    },
+    {
+        "id" :9,
+        "name": "9th floor",
+        "description": "Without elevator",
+        "charge": 90
+    },
+    {
+        "id" : 10,
+        "name": "10th floor",
+        "description": "Without elevator",
+        "charge": 100
+    }
+]
