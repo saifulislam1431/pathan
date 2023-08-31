@@ -45,7 +45,7 @@ const ThirdPage = () => {
             .then(data => {
                 if (data) {
                     setUrl(data.data.display_url)
-                    axios.get(`http://localhost:5000/calculate-total-price?distance=${preferences.distance}&&weight=${weight}&&quantity=${quantity}`)
+                    axios.get(`https://pathan-server.vercel.app/calculate-total-price?distance=${preferences.distance}&&weight=${weight}&&quantity=${quantity}`)
                         .then(res => {
                             console.log(res);
                             if (res.data.totalPrice) {

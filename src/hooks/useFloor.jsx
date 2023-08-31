@@ -5,7 +5,7 @@ const useFloor = () => {
     const{data: allFloors = [] , isLoading: loading , refetch} = useQuery({
         queryKey:["allFloors"],
         queryFn: async()=>{
-            const res = await fetch("http://localhost:5000/allFloors");
+            const res = await fetch("https://pathan-server.vercel.app/allFloors");
             return res.json()
         }
     })

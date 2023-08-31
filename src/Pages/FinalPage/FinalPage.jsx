@@ -20,7 +20,7 @@ const FinalPage = ({price}) => {
 
     useEffect(() => {
         if (price > 0) {
-            axios.post("http://localhost:5000/create-payment-intent", { price })
+            axios.post("https://pathan-server.vercel.app/create-payment-intent", { price })
                 .then(res => {
                     setClientSecret(res.data.clientSecret);
                 })
@@ -87,7 +87,7 @@ const FinalPage = ({price}) => {
             }
     
 
-            fetch("http://localhost:5000/payment", {
+            fetch("https://pathan-server.vercel.app/payment", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

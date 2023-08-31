@@ -9,7 +9,7 @@ const UserDash = () => {
     const [allOrders , setAllOrders] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/all-orders?email=${user.email}`)
+        fetch(`https://pathan-server.vercel.app/all-orders?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>setAllOrders(data))
     },[user.email])

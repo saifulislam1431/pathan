@@ -15,7 +15,7 @@ const from = form.from.value;
 const to = form.to.value;
 // const destination = to.
 
- axios.get(`http://localhost:5000/calculate-distance?destination=${to}`)
+ axios.get(`https://pathan-server.vercel.app/calculate-distance?destination=${to}`)
 // console.log(res.data);
 .then(res=>{
     if(res.data.distance){

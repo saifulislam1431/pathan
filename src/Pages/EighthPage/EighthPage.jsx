@@ -67,7 +67,7 @@ const EighthPage = () => {
                                 const loggedUser = res.user;
                                 updateUser(loggedUser, name, url)
                                     .then(() => {
-                                        fetch("http://localhost:5000/users", {
+                                        fetch("https://pathan-server.vercel.app/users", {
                                             method: "POST",
                                             headers: {
                                                 "content-type": "application/json"
