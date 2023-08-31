@@ -37,3 +37,10 @@
 .optionActive{
   @apply flex items-center gap-4 border border-accent py-3 px-3 rounded hover:border-secondary cursor-pointer transition-all duration-200 mb-7
 }
+.dash-active {
+  @apply w-full bg-base-100 font-bold text-primary py-3 px-3 rounded-tl-lg rounded-bl-lg
+}
+
+.dash-default {
+  @apply font-semibold py-3 px-3 text-neutral
+}

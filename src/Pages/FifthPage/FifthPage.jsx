@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import TitleTag from '../../Components/TitleTag';
 import { HiArrowSmallRight, HiOutlineCurrencyBangladeshi } from 'react-icons/hi2';
 import { useNavigate } from 'react-router-dom';
+import usePreferences from '../../hooks/usePreferences';
 
 const FifthPage = () => {
+    const [,refetch] = usePreferences()
     const oldPreferences = localStorage.getItem("preferences");
     const preferences = JSON.parse(oldPreferences);
     const oldAdd = parseFloat(preferences.additionalTaka);
@@ -36,6 +38,7 @@ const FifthPage = () => {
             additionalTaka
         }
         localStorage.setItem("preferences", JSON.stringify(newPreferences))
+        refetch()
         navigate("/restPage/sixStep")
 
     }

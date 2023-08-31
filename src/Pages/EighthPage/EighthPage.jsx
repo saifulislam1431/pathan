@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { HiArrowSmallRight } from 'react-icons/hi2';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
+import usePreferences from '../../hooks/usePreferences';
 
 const token = import.meta.env.VITE_IMAGE_TOKEN
 

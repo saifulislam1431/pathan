@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import logo from "../assets/express-delivery.png"
 import { Link, Outlet } from 'react-router-dom';
 import { HiOutlineCurrencyBangladeshi } from 'react-icons/hi2';
+import usePreferences from '../hooks/usePreferences';
 
 
 
 const RestPage = () => {
-
-    const [preferences , setPreferences] = useState([]);
-
-
-    useEffect(()=>{
-        const storedPre = JSON.parse(localStorage.getItem("preferences"))
-        setPreferences(storedPre)
-    },[])
-    
-
-    
+  const[preferences] = usePreferences();
     
     return (
         <div className="drawer lg:drawer-open">

@@ -5,10 +5,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { data } from 'autoprefixer';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import usePreferences from '../../hooks/usePreferences';
 
 const token = import.meta.env.VITE_IMAGE_TOKEN
 
 const ThirdPage = () => {
+    const [,refetch] = usePreferences()
     const navigate = useNavigate()
     const [url, setUrl] = useState("");
     console.log(url);
@@ -59,6 +61,7 @@ const ThirdPage = () => {
                                     type
                                 }
                                 localStorage.setItem("preferences", JSON.stringify(newPreferences))
+                                refetch()
                                 navigate("/restPage/forthStep")
                             }
                             console.log(url);

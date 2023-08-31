@@ -4,8 +4,10 @@ import { IoSwapVerticalOutline } from 'react-icons/io5';
 import TitleTag from '../../Components/TitleTag';
 import { useNavigate } from 'react-router-dom';
 import useFloor from '../../hooks/useFloor';
+import usePreferences from '../../hooks/usePreferences';
 
 const SixthPage = () => {
+    const [,refetch] = usePreferences()
     const [allFloors] = useFloor();
     const navigate = useNavigate()
     const oldPreferences = localStorage.getItem("preferences");
@@ -48,6 +50,7 @@ const SixthPage = () => {
             additionalTaka
         }
         localStorage.setItem("preferences", JSON.stringify(newPreferences))
+        refetch()
         navigate("/restPage/sevenStep")
 
     }

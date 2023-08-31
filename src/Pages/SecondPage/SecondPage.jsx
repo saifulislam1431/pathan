@@ -3,12 +3,14 @@ import TitleTag from '../../Components/TitleTag';
 import { IoBusOutline, IoHomeOutline, IoStorefrontOutline } from 'react-icons/io5';
 import { HiArrowSmallRight, HiMegaphone } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
+import usePreferences from '../../hooks/usePreferences';
 
 
 
 
 
 const SecondPage = () => {
+  const [,refetch] = usePreferences()
     const [pick, setPick] = useState("");
 
 
@@ -24,6 +26,7 @@ const SecondPage = () => {
             pick
         }
         localStorage.setItem("preferences",JSON.stringify(newPreferences))
+        refetch()
     },[pick,preferences])
 
 

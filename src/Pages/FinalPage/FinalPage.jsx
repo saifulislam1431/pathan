@@ -80,9 +80,10 @@ const FinalPage = ({price}) => {
                 deliveryTime: preferences.deliveryTime,
                 deliveryFloors: preferences.deliveryFloors,
                 pickFloors: preferences.pickFloors,
-                additionalTaka:preferences.pickFloors,
+                additionalTaka:preferences.additionalTaka,
                 email: user.email,
-                name: user.displayName
+                name: user.displayName,
+                paymentIntent: paymentIntent.id
             }
     
 
@@ -105,7 +106,7 @@ const FinalPage = ({price}) => {
                             confirmButtonText: 'Ok'
                         })
                         localStorage.removeItem("preferences");
-                        navigate("/")
+                        navigate("/dashboard/my-orders")
                     }
                 })
         }

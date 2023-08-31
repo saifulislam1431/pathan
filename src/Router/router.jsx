@@ -14,6 +14,8 @@ import NinthPage from "../Pages/NinethPage/NinthPage";
 import FinalPage from "../Pages/FinalPage/FinalPage";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import UserDash from "../Pages/UserDash/UserDash";
 
 const route = createBrowserRouter([
     {
@@ -72,6 +74,17 @@ const route = createBrowserRouter([
                 path:"nineStep",
                 element:<NinthPage />
             },
+        ]
+    },
+    {
+        path:"/dashboard",
+        errorElement:<ErrorPage />,
+        element:<Dashboard />,
+        children:[
+            {
+                path:"my-orders",
+                element:<UserDash />
+            }
         ]
     }
 ])
