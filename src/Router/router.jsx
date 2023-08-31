@@ -16,6 +16,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import UserDash from "../Pages/UserDash/UserDash";
+import PrivateRouter from "./PrivateRouter";
 
 const route = createBrowserRouter([
     {
@@ -79,11 +80,11 @@ const route = createBrowserRouter([
     {
         path:"/dashboard",
         errorElement:<ErrorPage />,
-        element:<Dashboard />,
+        element:<PrivateRouter><Dashboard /></PrivateRouter>,
         children:[
             {
                 path:"my-orders",
-                element:<UserDash />
+                element:<PrivateRouter><UserDash /></PrivateRouter>
             }
         ]
     }

@@ -5,6 +5,7 @@ import logo from "../../assets/express-delivery.png"
 import { IoIosLogIn } from "react-icons/io";
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
+import { HiOutlineArrowRightOnRectangle } from 'react-icons/hi2';
 
 const Navbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "lightThem")
